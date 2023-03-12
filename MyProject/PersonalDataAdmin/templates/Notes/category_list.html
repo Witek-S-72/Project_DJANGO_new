@@ -1,0 +1,28 @@
+{% extends 'PersonalDataAdmin/base.html' %}
+
+{% block title %}Lista kategorii{% endblock%}
+
+{% block main_content %}
+Lista kategorii
+
+{% if cat_list %}
+<table>
+    <thead>
+        <tr>
+            <th>Nazwa kategorii  ({{cat_list.count}})</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for c in cat_list %}
+
+        <tr>
+            <td>{{c.category_name}} ({{counter}})</td>
+
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% else %}
+Bral zarejestrowanych kategorii
+{% endif %}
+{% endblock %}

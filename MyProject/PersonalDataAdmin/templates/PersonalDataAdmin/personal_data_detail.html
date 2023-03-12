@@ -1,0 +1,15 @@
+{% extends 'PersonalDataAdmin/base.html' %}
+
+{% block title %} LISTA DETAIL DANYCH OSOBOWYCH {% endblock %}
+
+{% block main_content %}
+<ul>
+    <li><strong>ID:</strong> {{personaldata.id}}</li>
+    <li><strong>Płeć:</strong> {{personaldata.gender}}</li>
+    <li><strong>Imię:</strong> {{personaldata.first_name}}</li>
+    <li><strong>Nazwisko:</strong> {{personaldata.last_name}}</li>
+    <li><strong>Data urodzenia:</strong> {{personaldata.date_of_birth}}</li>
+    <li><strong>Uwagi i adnotacje:</strong>  {{personaldata.remarks}}</li>
+</ul>
+
+{% endblock %}

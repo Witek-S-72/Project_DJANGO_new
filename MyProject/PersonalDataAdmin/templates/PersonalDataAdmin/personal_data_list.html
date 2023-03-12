@@ -1,0 +1,34 @@
+{% extends 'PersonalDataAdmin/base.html' %}
+
+{% block title %} Dane osobowe {% endblock %}
+
+{% block main_content %}
+
+{% if personaldata %}
+<table>
+    <thead>
+        <tr>
+            <th>Id.</th>
+            <th>Płeć</th>
+            <th>Imię</th>
+            <th>Nazwisko</th>
+            <th>Data urodzenia</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for i in personaldata %}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.gender}}</td>
+            <td>{{i.first_name}}</td>
+            <td>{{i.last_name}}</td>
+            <td>{{i.date_of_birth|date:"Y-m-d"}}</td>
+            <td> <a href="{% url 'personal_data_detail' i.id %}">Szczegóły</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% else %}
+BRAK ZAREJESTROWANYCH DANYCH
+{% endif %}
+{% endblock %}

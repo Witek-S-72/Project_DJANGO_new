@@ -1,0 +1,31 @@
+{% extends 'PersonalDataAdmin/base.html' %}
+
+{% block title %} Lista studentów {% endblock %}
+
+{% block main_content %}
+{% if student %}
+<table>
+    <thead>
+        <tr>
+            <th>Nr indeksu</th>
+            <th>Data immatrykulacji</th>
+            <th>Kierunek studiów</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for s in student %}
+        <tr>
+            <td>{{s.index_numb}}</td>
+            <td>{{s.immatr_date}}</td>
+            <td>{{s.course}}</td>
+            <td> <a href="{% url 'student_detail' s.id %}">Szczegóły</a></td>
+        </tr>
+
+    {% endfor %}
+    </tbody>
+</table>
+{% else %}
+    Brak zarejestrowanych studentów
+{% endif %}
+
+{% endblock %}

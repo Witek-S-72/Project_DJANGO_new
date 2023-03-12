@@ -1,0 +1,27 @@
+{% extends 'PersonalDataAdmin/base.html' %}
+
+{% block title %} Lista notatek {% endblock %}
+
+{% block main_content %}
+
+{% if lista %}
+<table>
+    <thead>
+        <tr>
+            <th>Nr id</th><th>Tytuł</th><th>Kategoria</th><th>Data utworzenia</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for n in lista %}
+        <tr>
+            <td>{{n.id}}</td><td>{{n.title}}</td><td>{{n.category}}</td><td>{{n.create_date|date:"Y-m-d"}}</td><td><a href="{% url 'notes_detail' n.id %}">Szczegóły</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% else %}
+Brak zarejestrowanych notatek
+{% endif %}
+
+{% endblock %}
+

@@ -1,0 +1,15 @@
+{% extends 'PersonalDataAdmin/base.html' %}
+
+{% block title %} Student-Szczegóły {% endblock %}
+
+{% block main_content %}
+<ul>
+  <li><strong>Płeć:</strong>  {{student.person_id.gender}} </li>
+  <li><strong>Imię:</strong>  {{student.person_id.first_name}} </li>
+  <li><strong>Nazwisko:</strong>  {{student.person_id.last_name}} </li>
+  <li><strong>Data urodzenia:</strong>  {{student.person_id.date_of_birth}} </li>
+  <li><strong>Kierunek studiów</strong>  {{student.course}} </li>
+  <li><strong>Uwagi dziekańskie:</strong>  {{student.dekan_remarks}} </li>
+</ul>
+
+{% endblock %}

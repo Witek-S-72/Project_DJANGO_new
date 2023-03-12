@@ -1,0 +1,14 @@
+{% extends 'PersonalDataAdmin/base.html' %}
+
+{% block title %} Szczegółu notatki {% endblock %}
+
+{% block main_content %}
+<ul>
+    <li><strong>Tytuł notatki:</strong>  {{note.title}}</li>
+    <li><strong>Data utworzenia:</strong>  {{note.create_date|date:"Y-m-d"}}</li>
+    <li><strong>Treść notatki:</strong>  {{note.note}}</li>
+</ul>
+
+
+{% endblock %}
+
